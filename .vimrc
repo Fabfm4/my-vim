@@ -8,7 +8,6 @@ set encoding=utf-8
 set t_Co=256
 colorscheme breezy
 set background=light
-set termguicolors " if you want to run vim in a terminal
 colorscheme breezy
 " end schema config
 
@@ -24,6 +23,7 @@ Bundle 'tpope/vim-pathogen'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'andviro/flake8-vim'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'aradunovic/perun.vim'
 " Keep Plugin commands between vundle#begin/end.
 " Plugin vim-airline
 Plugin 'bling/vim-airline'
@@ -108,8 +108,10 @@ set wildmenu                    " visual autocomplete for command menu
 set list                        " ordered sequence of items
 set listchars=trail:·,tab:»»    " trail: Character to show for trailing spaces, tab: two characters to be used to show a tab.
 set colorcolumn=80             " highlights limit 120 characters long
-set cursorcolumn
 set cursorline
+set cursorcolumn
+hi CursorColumn ctermfg=White ctermbg=Yellow cterm=NONE guifg=white guibg=yellow gui=bold
+hi CursorLine   ctermfg=White ctermbg=Yellow cterm=NONE guifg=white guibg=yellow gui=bold
 match ErrorMsg '\%>100v.\+'     " message error above 100 characters long
 
 autocmd FileType groovy setlocal noexpandtab copyindent  preserveindent  softtabstop=0  shiftwidth=4  tabstop=4
@@ -168,4 +170,7 @@ let g:ropevim_autoimport_modules = ["os.*","traceback","django.*"]
 
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#auto_close_doc = 1
-
+let g:conoline_color_normal_light = "ctermbg=240"
+let g:conoline_color_normal_nr_light = "ctermbg=240 ctermfg=white"
+let g:conoline_color_insert_light = "ctermbg=black"
+let g:conoline_color_insert_nr_light = "ctermbg=red"
