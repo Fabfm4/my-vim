@@ -8,7 +8,7 @@ My custom configurations for vim
 
 Install
 ```
-git clone https://github.com/Fabfm4/my-vim ~/.vim
+git clone git@github.com:Fabfm4/my-vim.git --recursive ~/.vim
 ```
 
 Create symbolic link

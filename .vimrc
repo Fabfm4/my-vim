@@ -5,13 +5,20 @@ filetype off                  " required
 syntax enable
 scriptencoding utf-8
 set encoding=utf-8
-set t_Co=256
-colorscheme breezy
 set background=light
 set termguicolors " if you want to run vim in a terminal
-colorscheme breezy
 " end schema config
-
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+let g:flake8_show_in_gutter=1  " show
+let g:flake8_show_in_file=1
+set t_Co=256
+syntax on
+colorscheme minimalist
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -22,8 +29,7 @@ call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 Bundle 'tpope/vim-pathogen'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'andviro/flake8-vim'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'honza/vim-snippets'
 " Keep Plugin commands between vundle#begin/end.
 " Plugin vim-airline
 Plugin 'bling/vim-airline'
@@ -168,4 +174,5 @@ let g:ropevim_autoimport_modules = ["os.*","traceback","django.*"]
 
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#auto_close_doc = 1
-
+autocmd VimEnter * Limelight
+let g:ragtag_global_maps = 1
